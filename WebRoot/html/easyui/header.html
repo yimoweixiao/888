@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title></title>
+	</head>
+	<body>
+		<div class="header1">
+			<div class="header2">
+				<div class="logo">
+					<strong>XXX管理系统 v1.0</strong>
+				</div>
+				<div class="contact">
+					<div class="prompt">
+						<span>您好，管理员&nbsp;&nbsp;今天是2014年10月26日 星期日</span>
+					</div>
+					<div class="headerMenu">
+						<ul>
+							<li>
+								<a href="javascript:void(0);" target="_top" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-shutdown'" onclick="logoutEvt();return false;">注销登录</a>
+							</li>
+							<li>
+								<a href="javascript:void(0);" class="easyui-menubutton" data-options="plain:true,iconCls:'icon-user',menu:'#menu1'">个人设置</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="menu1">
+			<div onclick="addNewTab('修改密码', 'welcome.html');" data-options="iconCls:'icon-edit'">
+				修改密码
+			</div>
+			<div onclick="addNewTab('用户信息', 'welcome.html');" data-options="iconCls:'icon-vcard'">
+				用户信息
+			</div>
+		</div>
+	</body>
+</html>

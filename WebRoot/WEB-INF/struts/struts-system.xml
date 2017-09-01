@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<!-- 用户认证 -->
+	<package name="system,Auth" namespace="/action/system/auth" extends="struts-default">
+		<action name="doLogin" class="javax.xianfeng.system.security.action.SysUserAction" method="doLogin"/>
+		<action name="doLoadMenu" class="javax.xianfeng.system.security.action.SysUserAction" method="doLoadMenu"/>
+		<action name="doLogout" class="javax.xianfeng.system.security.action.SysUserAction" method="doLogout"/>
+		<action name="doRegist" class="javax.xianfeng.system.security.action.SysUserAction" method="doRegist"/>
+		<action name="doPwdEdit" class="javax.xianfeng.system.security.action.SysUserAction" method="doPwdEdit"/>
+		<action name="doLockScr" class="javax.xianfeng.system.security.action.SysUserAction" method="doLockScr"/>
+		<action name="doUnlockScr" class="javax.xianfeng.system.security.action.SysUserAction" method="doUnlockScr"/>
+		<action name="doMenuStyle" class="javax.xianfeng.system.security.action.SysUserAction" method="doMenuStyle"/>
+	</package>
+	
+	<!-- 菜单管理 -->
+	<package name="system.MenuType" namespace="/action/system/menuType" extends="struts-default">
+		<action name="doList" class="javax.xianfeng.system.permit.action.MenuTypeAction" method="doList"/>
+		<action name="doSave" class="javax.xianfeng.system.permit.action.MenuTypeAction" method="doSave"/>
+	</package>
+	
+	<package name="system.Menu" namespace="/action/system/menu" extends="struts-default">
+		<action name="doList" class="javax.xianfeng.system.permit.action.MenuAction" method="doList"/>
+		<action name="doEdit" class="javax.xianfeng.system.permit.action.MenuAction" method="doEdit"/>
+		<action name="doSave" class="javax.xianfeng.system.permit.action.MenuAction" method="doSave"/>
+		<action name="doAjaxSave" class="javax.xianfeng.system.permit.action.MenuAction" method="doAjaxSave"/>
+		<action name="doDrop" class="javax.xianfeng.system.permit.action.MenuAction" method="doDrop"/>
+	</package>
+	
+	<!-- 功能管理 -->
+	<package name="system.Module" namespace="/action/system/module" extends="struts-default">
+		<action name="doList" class="javax.xianfeng.system.permit.action.ModuleAction" method="doList"/>
+		<action name="doEdit" class="javax.xianfeng.system.permit.action.ModuleAction" method="doEdit"/>
+		<action name="doSave" class="javax.xianfeng.system.permit.action.ModuleAction" method="doSave"/>
+		<action name="doDrop" class="javax.xianfeng.system.permit.action.ModuleAction" method="doDrop"/>
+	</package>
+	
+	<package name="system.Function" namespace="/action/system/function" extends="struts-default">
+		<action name="doList" class="javax.xianfeng.system.permit.action.FunctionAction" method="doList"/>
+		<action name="doEdit" class="javax.xianfeng.system.permit.action.FunctionAction" method="doEdit"/>
+		<action name="doSave" class="javax.xianfeng.system.permit.action.FunctionAction" method="doSave"/>
+		<action name="doDrop" class="javax.xianfeng.system.permit.action.FunctionAction" method="doDrop"/>
+	</package>
+	
+	<package name="system.Operation" namespace="/action/system/operation" extends="struts-default">
+		<action name="doList" class="javax.xianfeng.system.permit.action.OperationAction" method="doList"/>
+		<action name="doSave" class="javax.xianfeng.system.permit.action.OperationAction" method="doSave"/>
+	</package>
+	
+	<!-- 权限管理 -->
+	<package name="system.Role" namespace="/action/system/role" extends="struts-default">
+		<action name="doList" class="javax.xianfeng.system.permit.action.RoleAction" method="doList"/>
+		<action name="doSave" class="javax.xianfeng.system.permit.action.RoleAction" method="doSave"/>
+	</package>
+	
+	<package name="system.RoleOperation" namespace="/action/system/roleOperation" extends="struts-default">
+		<action name="doList" class="javax.xianfeng.system.permit.action.RoleOperationAction" method="doList"/>
+		<action name="doSave" class="javax.xianfeng.system.permit.action.RoleOperationAction" method="doSave"/>
+	</package>
+	
+	<!-- 用户管理 -->
+	<package name="system.User" namespace="/action/system/user" extends="struts-default">
+		<action name="doList" class="javax.xianfeng.system.permit.action.UserAction" method="doList"/>
+		<action name="doEdit" class="javax.xianfeng.system.permit.action.UserAction" method="doEdit"/>
+		<action name="doSave" class="javax.xianfeng.system.permit.action.UserAction" method="doSave"/>
+		<action name="doDrop" class="javax.xianfeng.system.permit.action.UserAction" method="doDrop"/>
+		<action name="doLock" class="javax.xianfeng.system.permit.action.UserAction" method="doLock"/>
+		<action name="doUnlock" class="javax.xianfeng.system.permit.action.UserAction" method="doUnlock"/>
+	</package>
+	
+	<package name="system.UserRole" namespace="/action/system/userRole" extends="struts-default">
+		<action name="doList" class="javax.xianfeng.system.permit.action.UserRoleAction" method="doList"/>
+		<action name="doSave" class="javax.xianfeng.system.permit.action.UserRoleAction" method="doSave"/>
+	</package>
+	
+	<!-- 首页管理 -->
+	<package name="system.DefaultPage" namespace="/action/system/defaultPage" extends="struts-default">
+		<action name="doList" class="javax.xianfeng.system.portal.action.DefaultPageAction" method="doList"/>
+		<action name="doSave" class="javax.xianfeng.system.portal.action.DefaultPageAction" method="doSave"/>
+	</package>
+	
+</struts>

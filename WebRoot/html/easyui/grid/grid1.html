@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" type="text/css" href="../../../plugin/easyui/themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../../../skins/css/icon.css">
+	<script type="text/javascript" src="../../../plugin/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="../../../plugin/easyui/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="../../../plugin/easyui/locale/easyui-lang-zh_CN.js"></script>
+</head>
+<body class="easyui-layout">
+<div class="easyui-panel" data-options="region:'north', collapsible:false,split:false,border:false" style="overflow:hidden;">
+   	<table width="100%" border="0">
+   		<tr>
+   			<td align="right">单行文本框：</td>
+   			<td>
+   				<input type="text" name="f1" class="easyui-textbox"/>
+   			</td>
+   			<td align="right">单选框：</td>
+   			<td>
+   				<input type="radio" name="f2" value="1"/>选项
+   				<input type="radio" name="f2" value="2"/>选项
+   			</td>
+   			<td align="right">复选框：</td>
+   			<td>
+   				<input type="checkbox" name="f3" value="1"/>选项
+   				<input type="checkbox" name="f3" value="2"/>选项
+   				<input type="checkbox" name="f3" value="3"/>选项
+   			</td>
+   			<td rowspan="2">
+   				<a href="javascript:void(0)" class="easyui-linkbutton" onclick="submitEvt()" style="width:60px;">查询</a>
+   				<br/><br/>
+   				<a href="javascript:void(0)" class="easyui-linkbutton" onclick="returnEvt()" style="width:60px;">重置</a>
+   			</td>
+   		</tr>
+   		<tr>
+   			<td align="right">下拉框：</td>
+   			<td>
+   				<select class="easyui-combobox" name="f4" style="width:153px;">
+   					<option value="Java">Java</option>
+   					<option value="C#">C#</option>
+   					<option value="PHP">PHP</option>
+   				</select>
+   			</td>
+   			<td align="right">数字域：</td>
+   			<td>
+   				<input type="text" name="f6" class="easyui-numberspinner"/>
+   			</td>
+   			<td align="right">日期域：</td>
+   			<td>
+   				<input type="text" name="f7" class="easyui-datebox"/>
+   			</td>
+   		</tr>
+   	</table>
+</div>
+<div data-options="region:'center', border:false, split:false">
+	<table class="easyui-datagrid" fit="true" data-options="rownumbers:true, border: false, singleSelect:true, pagination:true, toolbar:toolbar">
+		<thead>
+			<tr>
+				<th field="ck" checkbox="true"></th>
+				<th data-options="field:'code'" style="width:15%">编号</th>
+				<th data-options="field:'name'" style="width:25%">名称</th>
+				<th data-options="field:'type'" style="width:15%">类型</th>
+				<th data-options="field:'note'" style="width:40%">说明</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td></td>
+				<td field="code">N201500001</th>
+				<td>名称1</td>
+				<td>S</td>
+				<td>附加说明……附加说明……附加说明……附加说明……附加说明……附加说明……附加说明……附加说明……附加说明……附加说明……附加说明……</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td field="code">N201500002</th>
+				<td>名称2</td>
+				<td>A</td>
+				<td>附加说明</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td field="code">N201500003</th>
+				<td>名称3</td>
+				<td>B</td>
+				<td>附加说明</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td field="code">N201500004</th>
+				<td>名称4</td>
+				<td>C</td>
+				<td>附加说明</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td field="code">N201500005</th>
+				<td>名称1</td>
+				<td>S</td>
+				<td>附加说明</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td field="code">N201500006</th>
+				<td>名称2</td>
+				<td>A</td>
+				<td>附加说明</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td field="code">N201500007</th>
+				<td>名称3</td>
+				<td>B</td>
+				<td>附加说明</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td field="code">N201500008</th>
+				<td>名称4</td>
+				<td>C</td>
+				<td>附加说明</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td field="code">N201500009</th>
+				<td>名称1</td>
+				<td>S</td>
+				<td>附加说明</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td field="code">N2015000010</th>
+				<td>名称2</td>
+				<td>A</td>
+				<td>附加说明</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td field="code">N2015000011</th>
+				<td>名称2</td>
+				<td>A</td>
+				<td>附加说明</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td field="code">N2015000012</th>
+				<td>名称2</td>
+				<td>A</td>
+				<td>附加说明</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+</body>
+<script type="text/javascript">
+var toolbar = [{
+	text: "新增",
+	iconCls: "icon-add",
+	handler: function() {
+		alert("add");
+	}
+}, {
+	text: "修改",
+	iconCls: "icon-edit",
+	handler: function() {
+		alert("add");
+	}
+}, {
+	text: "导出",
+	iconCls: "icon-excel",
+	handler: function() {
+		alert("add");
+	}
+}];
+function submitEvt() {
+	$('#form1').form('submit');
+}
+
+function returnEvt() {
+	$('#form1').form('clear');
+}
+</script>
+</html>

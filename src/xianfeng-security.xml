@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<security-config debug="false">
+	<!-- 3600(s)*12=43200(s) -->
+	<session>
+		<maxInterval>43200</maxInterval>
+	</session>
+	
+	<!-- 3600(s)*24*7=604800(s) -->
+	<cookie>
+		<maxAge>604800</maxAge>
+	</cookie>
+	
+	<!-- 安全资源设置 default为无权限跳转页面 -->
+	<security-uri default="/jsp/xianfeng/error/403.jsp">
+		<!-- 校验资源 -->
+		<include>/jsp/xianfeng/ucenter/index.jsp</include>
+		<include>/jsp/xianfeng/ucenter/header.jsp</include>
+		<include>/jsp/xianfeng/ucenter/menu.jsp</include>
+		
+		<include>/action/system/auth/doLoadMenu.action</include>
+		<include>/action/system/auth/doLogout.action</include>
+		
+		<!-- 开放资源 -->
+		<exclude>/jsp/xianfeng/ucenter/loginCfg.jsp</exclude>
+		<exclude>/jsp/xianfeng/ucenter/login.jsp</exclude>
+		<exclude>/jsp/xianfeng/ucenter/login-header.jsp</exclude>
+		<exclude>/jsp/xianfeng/ucenter/footer.jsp</exclude>
+		<exclude>/jsp/xianfeng/ucenter/regist.jsp</exclude>
+		
+		<exclude>/jsp/xianfeng/ucenter/linkus.jsp</exclude>
+		<exclude>/jsp/xianfeng/ucenter/syshelp.jsp</exclude>
+		
+		<exclude>/action/system/auth/doLogin.action</exclude>
+		<exclude>/action/system/auth/doRegist.action</exclude>
+		
+		<exclude>/jsp/xianfeng/platform/organ_help.jsp</exclude>
+		<exclude>/action/platform/organ/doList.action</exclude>
+		
+		<exclude>/jsp/xianfeng/error/404.jsp</exclude>
+		<exclude>/jsp/xianfeng/error/500.jsp</exclude>
+		<exclude>/jsp/xianfeng/error/error.jsp</exclude>
+		
+		<exclude>/jsp/xianfeng/error/404.jsp</exclude>
+		
+	</security-uri>
+	
+	<!-- 登录页面：开放资源，不进行权限校验 -->
+	<login-uri>
+		<value type="DEFAULT">/jsp/xianfeng/ucenter/loginCfg.jsp</value>
+	</login-uri>
+	
+	<!-- 用户主页：校验资源，进行权限校验，根据type匹配 -->
+	<homepage-uri>
+		<value type="ADMIN">/jsp/xianfeng/ucenter/index.jsp</value>
+		<value type="USER">/jsp/xianfeng/ucenter/index.jsp</value>
+	</homepage-uri>
+	
+	<!-- 授权验证失败页面：开放资源，不进行权限校验 -->
+	<license-uri>
+		<value>/jsp/xianfeng/licenseError.jsp</value>
+	</license-uri>
+	
+	<authorization>
+		<security-token class="javax.xianfeng.security.AuthorizeToken"/>
+		<token-provider class="javax.xianfeng.security.AuthorizeTokenProvider"/>
+		<security-validator class="javax.xianfeng.security.StrictSecurityResourceValidator"/>
+		<authorize-manager class="javax.xianfeng.system.security.SysAuthorizeMgr"/>
+	</authorization>
+	
+</security-config>

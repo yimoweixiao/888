@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="../../../plugin/easyui/themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../../../skins/css/icon.css">
+	<script type="text/javascript" src="../../../plugin/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="../../../plugin/easyui/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="../../../plugin/easyui/locale/easyui-lang-zh_CN.js"></script>
+	<style type="text/css">
+		/*.datagrid-view1 .datagrid-body {overflow:scroll;}*/
+	</style>
+</head>
+<body>
+<table id="grid1" title="数据列表" class="easyui-datagrid" width="800" height="420" 
+	data-options="rownumbers:true,pagination:true,toolbar:toolbar"
+	fitColumns="false"
+	nowrap="true"
+	striped="true"
+	url="../data.json" method="get">
+	<thead frozen="true">
+		<tr>
+			<th field="ck" checkbox="true"></th>
+			<th data-options="field:'code',width:150">编号</th>
+			<th data-options="field:'name',width:150">名称</th>
+		</tr>
+	</thead>
+	<thead>
+		<tr>
+			<th data-options="field:'type',width:150">类型</th>
+			<th data-options="field:'note',width:510">说明</th>
+		</tr>
+	</thead>
+</table>
+</body>
+<script type="text/javascript">
+var editIndex = undefined;
+
+var toolbar = [{
+	text: "新增",
+	iconCls: "icon-add",
+	handler: function() {
+		if (endEditing()){
+			$('#grid1').datagrid('appendRow',{type:'B'});
+			editIndex = $('#grid1').datagrid('getRows').length-1;
+			$('#grid1').datagrid('selectRow', editIndex).datagrid('beginEdit', editIndex);
+		}
+	}
+}, {
+	text: "删除",
+	iconCls: "icon-delete",
+	handler: function() {
+		alert("delete");
+	}
+}, {
+	text: "保存",
+	iconCls: "icon-saveall",
+	handler: function() {
+		alert("saveall");
+	}
+}];
+
+function onClickRow(index){
+	if (editIndex != index){
+		if (endEditing()){
+			$('#grid1').datagrid('selectRow', index).datagrid('beginEdit', index);
+			editIndex = index;
+		} else {
+			$('#grid1').datagrid('selectRow', editIndex);
+		}
+	}
+}
+function endEditing(){
+	if (editIndex == undefined){return true}
+	if ($('#grid1').datagrid('validateRow', editIndex)){
+		$('#grid1').datagrid('endEdit', editIndex);
+		editIndex = undefined;
+		return true;
+	} else {
+		return false;
+	}
+}
+</script>
+</html>

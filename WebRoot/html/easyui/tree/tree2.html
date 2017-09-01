@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" type="text/css" href="../../../plugin/easyui/themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../../../skins/css/icon.css">
+	<script type="text/javascript" src="../../../plugin/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="../../../plugin/easyui/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="../../../plugin/easyui/locale/easyui-lang-zh_CN.js"></script>
+</head>
+<body class="easyui-layout" style="margin: 4px">
+<div id="treeDiv" class="easyui-panel" title="树" data-options="region:'west', split:true, collapsed:false" style="width:200px">
+	<ul class="easyui-tree" data-options="onContextMenu: function(e,node){
+		e.preventDefault();
+		$(this).tree('select', node.target);
+		$('#menuDiv').menu('show',{
+			left: e.pageX,
+			top: e.pageY
+		});
+	}">
+		<li>
+			<span>根节点</span>
+			<ul>
+				<li data-options="state:'closed'">
+					<span>一级节点</span>
+					<ul>
+						<li>
+							<span>二级节点</span>
+						</li>
+						<li>
+							<span>二级节点</span>
+						</li>
+						<li>
+							<span>二级节点</span>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<span>一级节点</span>
+					<ul>
+						<li>二级节点</li>
+						<li>二级节点</li>
+						<li>二级节点</li>
+						<li>二级节点</li>
+					</ul>
+				</li>
+				<li>一级节点</li>
+			</ul>
+		</li>
+	</ul>
+</div>
+<div id="menuDiv" class="easyui-menu" style="width:120px;">
+	<div onclick="refresh()" data-options="iconCls:'icon-add'">新增</div>
+	<div onclick="refresh()" data-options="iconCls:'icon-delete'">删除</div>
+	<div class="menu-sep"></div>
+	<div onclick="refresh()" data-options="iconCls:'icon-up'">上移</div>
+	<div onclick="refresh()" data-options="iconCls:'icon-refresh'">刷新</div>
+	<div onclick="refresh()" data-options="iconCls:'icon-down'">下移</div>
+</div>
+</body>
+<script type="text/javascript">
+function refresh(){
+	alert(1);
+}
+</script>
+</html>

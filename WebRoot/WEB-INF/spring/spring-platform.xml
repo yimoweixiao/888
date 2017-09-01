@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans    
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd    
+    http://www.springframework.org/schema/context    
+    http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+	<!-- 属性管理 -->
+	<bean id="platform.PropertyDao" class="javax.xianfeng.hibernate.dao.HibernateDaoImpl">
+		<constructor-arg>
+			<value>javax.xianfeng.platform.base.entity.Property</value>
+		</constructor-arg>
+		<property name="dataSource" ref="dataSource" />
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<bean name="platform.PropertyService" class="javax.xianfeng.platform.base.service.PropertyService">
+		<property name="propertyDao" ref="platform.PropertyDao" />
+	</bean>
+
+	<!-- 字典管理 -->
+	<bean id="platform.DictDao" class="javax.xianfeng.hibernate.dao.HibernateDaoImpl">
+		<constructor-arg>
+			<value>javax.xianfeng.platform.base.entity.Dict</value>
+		</constructor-arg>
+		<property name="dataSource" ref="dataSource" />
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<bean name="platform.DictService" class="javax.xianfeng.platform.base.service.DictService">
+		<property name="dictDao" ref="platform.DictDao" />
+	</bean>
+
+	<bean id="platform.DictItemDao" class="javax.xianfeng.hibernate.dao.HibernateDaoImpl">
+		<constructor-arg>
+			<value>javax.xianfeng.platform.base.entity.DictItem</value>
+		</constructor-arg>
+		<property name="dataSource" ref="dataSource" />
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<bean name="platform.DictItemService" class="javax.xianfeng.platform.base.service.DictItemService">
+		<property name="dictItemDao" ref="platform.DictItemDao" />
+	</bean>
+
+	<!-- 流水号管理 -->
+	<bean id="platform.SerialNoDao" class="javax.xianfeng.hibernate.dao.HibernateDaoImpl">
+		<constructor-arg>
+			<value>javax.xianfeng.platform.base.entity.SerialNo</value>
+		</constructor-arg>
+		<property name="dataSource" ref="dataSource" />
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<bean name="platform.SerialNoService" class="javax.xianfeng.platform.base.service.SerialNoService">
+		<property name="serialNoDao" ref="platform.SerialNoDao" />
+	</bean>
+	
+	<!-- 通讯录管理 -->
+	<bean id="platform.LinkRecDao" class="javax.xianfeng.hibernate.dao.HibernateDaoImpl">
+		<constructor-arg>
+			<value>javax.xianfeng.platform.base.entity.LinkRec</value>
+		</constructor-arg>
+		<property name="dataSource" ref="dataSource" />
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<bean name="platform.LinkRecService" class="javax.xianfeng.platform.base.service.LinkRecService">
+		<property name="linkRecDao" ref="platform.LinkRecDao" />
+	</bean>
+
+	<!-- 组织机构管理 -->
+	<bean id="platform.OrganTypeDao" class="javax.xianfeng.hibernate.dao.HibernateDaoImpl">
+		<constructor-arg>
+			<value>javax.xianfeng.platform.organ.entity.OrganType</value>
+		</constructor-arg>
+		<property name="dataSource" ref="dataSource" />
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<bean name="platform.OrganTypeService"
+		class="javax.xianfeng.platform.organ.service.OrganTypeService">
+		<property name="organTypeDao" ref="platform.OrganTypeDao" />
+	</bean>
+
+	<bean id="platform.OrganRuleDao" class="javax.xianfeng.hibernate.dao.HibernateDaoImpl">
+		<constructor-arg>
+			<value>javax.xianfeng.platform.organ.entity.OrganRule</value>
+		</constructor-arg>
+		<property name="dataSource" ref="dataSource" />
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<bean name="platform.OrganRuleService"
+		class="javax.xianfeng.platform.organ.service.OrganRuleService">
+		<property name="organRuleDao" ref="platform.OrganRuleDao" />
+	</bean>
+
+	<bean id="platform.OrganDao" class="javax.xianfeng.hibernate.dao.HibernateDaoImpl">
+		<constructor-arg>
+			<value>javax.xianfeng.platform.organ.entity.Organ</value>
+		</constructor-arg>
+		<property name="dataSource" ref="dataSource" />
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<bean name="platform.OrganService" class="javax.xianfeng.platform.organ.service.OrganService">
+		<property name="organDao" ref="platform.OrganDao" />
+	</bean>
+
+	<!-- 行政区划管理 -->
+	<bean id="platform.CantTypeDao" class="javax.xianfeng.hibernate.dao.HibernateDaoImpl">
+		<constructor-arg>
+			<value>javax.xianfeng.platform.base.entity.CantType</value>
+		</constructor-arg>
+		<property name="dataSource" ref="dataSource" />
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<bean id="platform.CantDao" class="javax.xianfeng.hibernate.dao.HibernateDaoImpl">
+		<constructor-arg>
+			<value>javax.xianfeng.platform.base.entity.Cant</value>
+		</constructor-arg>
+		<property name="dataSource" ref="dataSource" />
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<bean name="platform.CantTypeService" class="javax.xianfeng.platform.base.service.CantTypeService">
+		<property name="cantTypeDao" ref="platform.CantTypeDao" />
+	</bean>
+	
+	<bean name="platform.CantService" class="javax.xianfeng.platform.base.service.CantService">
+		<property name="cantDao" ref="platform.CantDao" />
+	</bean>
+	
+</beans>

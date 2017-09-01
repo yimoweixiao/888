@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans    
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd    
+    http://www.springframework.org/schema/context    
+    http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+	
+	<!-- DAO -->
+	<bean id="demo.DemoEntityDao" class="javax.xianfeng.hibernate.dao.HibernateDaoImpl">
+		<constructor-arg>
+			<value>javax.xianfeng.demo.entity.DemoEntity</value>
+		</constructor-arg>
+		<property name="dataSource" ref="dataSource" />
+		<property name="sessionFactory" ref="sessionFactoryLocal" />
+	</bean>
+	
+	<bean id="demo.DemoEntity1Dao" class="javax.xianfeng.hibernate.dao.HibernateDaoImpl">
+		<constructor-arg>
+			<value>javax.xianfeng.demo.entity.DemoEntity1</value>
+		</constructor-arg>
+		<property name="dataSource" ref="dataSource" />
+		<property name="sessionFactory" ref="sessionFactoryLocal" />
+	</bean>
+	
+	<bean id="demo.DemoEntity2Dao" class="javax.xianfeng.hibernate.dao.HibernateDaoImpl">
+		<constructor-arg>
+			<value>javax.xianfeng.demo.entity.DemoEntity2</value>
+		</constructor-arg>
+		<property name="dataSource" ref="dataSource" />
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<!-- Service -->
+	<bean name="demo.DemoEntityService" class="javax.xianfeng.demo.service.DemoEntityServiceImpl">
+		<property name="dao" ref="demo.DemoEntityDao" />
+	</bean>
+	
+	<bean name="demo.DemoEntity1Service" class="javax.xianfeng.demo.service.DemoEntity1ServiceImpl">
+		<property name="dao" ref="demo.DemoEntity1Dao" />
+	</bean>
+	
+	<bean name="demo.DemoEntity2Service" class="javax.xianfeng.demo.service.DemoEntity2ServiceImpl">
+		<property name="dao" ref="demo.DemoEntity2Dao" />
+	</bean>
+	
+	<!-- Action -->
+	<bean name="demo.DemoEntity1Action" class="javax.xianfeng.demo.action.DemoAction2">
+		<property name="demoService" ref="demo.DemoEntity1Service" />
+	</bean>
+	
+	<!-- Servlet -->
+	<bean name="demo.DemoEntityServlet" class="javax.xianfeng.demo.servlet.DemoEntityServlet">
+		<property name="service" ref="demo.DemoEntityService" />
+	</bean>
+	
+	<context:component-scan base-package="javax.xianfeng.demo.servlet"></context:component-scan>
+</beans>

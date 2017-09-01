@@ -1,0 +1,60 @@
+body {
+	font-family: "微软雅黑", "宋体", Arial, sans-serif;
+	font-size: 12px;
+}
+
+/*解决表单校验多行文本框校验不通过上、左边框有黑色边框问题*/
+.validatebox-invalid {
+	border: solid 1px #ffa8a8;
+}
+
+/*表单校验提示信息*/
+label.error {
+	padding-left: 6px;
+	color: #ffa8a8;
+	display: none;
+}
+
+/*表单输入提示*/
+.field-tip {
+	padding-left: 6px;
+	color: #a5a5a5;
+}
+
+/*顶部工具栏*/
+.toolbar {
+	height: 28px;
+	text-align: right;
+	background: #f4f4f4;
+}
+
+/*底部工具栏*/
+.footbar {
+	height: 30px;
+	text-align: center;
+	padding-top: 6px;
+	padding-bottom: 2px;
+}
+
+/*表格标题居中*/
+.datagrid-header-row td div.datagrid-cell {
+	text-align: center;
+}
+
+/*手风琴标题选中颜色*/
+.accordion .accordion-header-selected {
+	background-color: #E0ECFF;
+}
+
+/*按钮选中颜色*/
+.l-btn-plain:hover {
+	background-color: #FFE48D;
+}
+
+.l-btn-plain-selected:hover {
+	background-color: #FFE48D;
+}
+
+.l-btn-plain-selected {
+	background-color: #F0F0F0;
+}

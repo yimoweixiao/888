@@ -1,0 +1,451 @@
+/*根目录*/
+.icon-home {
+	background: url('../images/icons/16/home.gif') no-repeat center center;
+}
+
+.icon-home32 {
+	background: url('../images/icons/32/home.png') no-repeat center center;
+}
+
+/*用户*/
+.icon-user {
+	background: url('../images/icons/16/user.png') no-repeat center center;
+}
+
+.icon-user32 {
+	background: url('../images/icons/32/user.png') no-repeat center center;
+}
+
+/*在线用户*/
+.icon-useronline32 {
+	background: url('../images/icons/32/useronline.png') no-repeat center
+		center;
+}
+
+/*锁定*/
+.icon-lock {
+	background: url('../images/icons/16/lock.png') no-repeat center center;
+}
+
+/*解锁*/
+.icon-unlock {
+	background: url('../images/icons/16/unlock.png') no-repeat center center
+		;
+}
+
+/*账号信息*/
+.icon-vcard {
+	background: url('../images/icons/16/vcard.png') no-repeat center center;
+}
+
+.icon-vcard32 {
+	background: url('../images/icons/32/vcard.png') no-repeat center center;
+}
+
+/*注销*/
+.icon-logout {
+	background: url('../images/icons/16/logout.gif') no-repeat center center
+		;
+}
+
+/*锁屏*/
+.icon-monitor {
+	background: url('../images/icons/16/monitor.png') no-repeat center
+		center;
+}
+
+/*样式*/
+.icon-menustyle {
+	background: url('../images/icons/16/menustyle.png') no-repeat center
+		center;
+}
+
+/*折叠*/
+.icon-items {
+	background: url('../images/icons/16/items.png') no-repeat center center;
+}
+
+/*树形*/
+.icon-tree {
+	background: url('../images/icons/16/tree.png') no-repeat center center;
+}
+
+/*关机*/
+.icon-shutdown {
+	background: url('../images/icons/16/shutdown.png') no-repeat center
+		center;
+}
+
+/*设置*/
+.icon-settings {
+	background: url('../images/icons/16/settings.png') no-repeat center
+		center;
+}
+
+.icon-settings32 {
+	background: url('../images/icons/32/settings.png') no-repeat center
+		center;
+}
+
+/*工具*/
+.icon-tools {
+	background: url('../images/icons/16/tools.png') no-repeat center center;
+}
+
+.icon-tools32 {
+	background: url('../images/icons/32/tools.png') no-repeat center center;
+}
+
+/*导航*/
+.icon-navigator32 {
+	background: url('../images/icons/32/navigator.png') no-repeat center
+		center;
+}
+
+/*数据库*/
+.icon-database32 {
+	background: url('../images/icons/32/database.png') no-repeat center
+		center;
+}
+
+/*电话*/
+.icon-phone32 {
+	background: url('../images/icons/32/phone.png') no-repeat center center;
+}
+
+/*帮助*/
+.icon-help {
+	background: url('../images/icons/16/help.png') no-repeat center center;
+}
+
+/*对号*/
+.icon-right {
+	background: url('../images/icons/16/right.png') no-repeat center center;
+}
+
+/*错号*/
+.icon-wrong {
+	background: url('../images/icons/16/wrong.gif') no-repeat center center;
+}
+
+/*垃圾桶*/
+.icon-trashcan {
+	background: url('../images/icons/16/trashcan.png') no-repeat center
+		center;
+}
+
+/*新增*/
+.icon-add {
+	background: url('../images/icons/16/add.png') no-repeat center center;
+}
+
+.icon-add32 {
+	background: url('../images/icons/32/add.png') no-repeat center center;
+}
+
+/*删除*/
+.icon-delete {
+	background: url('../images/icons/16/delete.png') no-repeat center center
+		;
+}
+
+/*修改*/
+.icon-edit {
+	background: url('../images/icons/16/edit.png') no-repeat center center;
+}
+
+/*明细*/
+.icon-detail {
+	background: url('../images/icons/16/detail.png') no-repeat center center
+		;
+}
+
+/*保存*/
+.icon-save {
+	background: url('../images/icons/16/save.gif') no-repeat center center;
+}
+
+/*全部保存*/
+.icon-saveall {
+	background: url('../images/icons/16/saveall.png') no-repeat center
+		center;
+}
+
+/*导出*/
+.icon-excel {
+	background: url('../images/icons/16/excel.png') no-repeat center center;
+}
+
+/*打印*/
+.icon-print {
+	background: url('../images/icons/16/print.png') no-repeat center center;
+}
+
+/*返回*/
+.icon-undo {
+	background: url('../images/icons/16/undo.gif') no-repeat center center;
+}
+
+/*上移*/
+.icon-up {
+	background: url('../images/icons/16/move-up.gif') no-repeat center
+		center;
+}
+
+/*下移*/
+.icon-down {
+	background: url('../images/icons/16/move-down.gif') no-repeat center
+		center;
+}
+
+/*刷新*/
+.icon-refresh {
+	background: url('../images/icons/16/refresh.png') no-repeat center
+		center;
+}
+
+.icon-refresh32 {
+	background: url('../images/icons/32/refresh.png') no-repeat center
+		center;
+}
+
+/*选择*/
+.icon-select {
+	background: url('../images/icons/16/select.gif') no-repeat center center
+		;
+}
+
+/*放大镜*/
+.icon-search {
+	background: url('../images/icons/16/search.png') no-repeat center center
+		;
+}
+
+/*关闭*/
+.icon-close {
+	background: url('../images/icons/16/close.png') no-repeat center center;
+}
+
+/*黄灯*/
+.icon-lighty {
+	background: url('../images/icons/16/lights-yellow.png') no-repeat center
+		center;
+}
+
+/*组件*/
+.icon-plugin {
+	background: url('../images/icons/16/plugin.gif') no-repeat center center
+		;
+}
+
+.icon-plugin32 {
+	background: url('../images/icons/32/plugin.gif') no-repeat center center
+		;
+}
+
+/*上级*/
+.icon-parent {
+	background: url('../images/icons/16/parent.png') no-repeat center center
+		;
+}
+
+/*下级*/
+.icon-children {
+	background: url('../images/icons/16/children.png') no-repeat center
+		center;
+}
+
+/*模块*/
+.icon-module {
+	background: url('../images/icons/16/home.gif') no-repeat center center;
+}
+
+/*功能*/
+.icon-function {
+	background: url('../images/icons/16/function.gif') no-repeat center
+		center;
+}
+
+.icon-function32 {
+	background: url('../images/icons/32/function.png') no-repeat center
+		center;
+}
+
+/*操作*/
+.icon-operation {
+	background: url('../images/icons/16/detail.png') no-repeat center center
+		;
+}
+
+/*角色*/
+.icon-role32 {
+	background: url('../images/icons/32/role.png') no-repeat center center;
+}
+
+/*单位*/
+.icon-corp {
+	background: url('../images/icons/16/organ.gif') no-repeat center center;
+}
+
+/*部门*/
+.icon-dept {
+	background: url('../images/icons/16/organ.gif') no-repeat center center;
+}
+
+/*岗位*/
+.icon-post {
+	background: url('../images/icons/16/post.png') no-repeat center center;
+}
+
+.icon-post32 {
+	background: url('../images/icons/32/group.png') no-repeat center center;
+}
+
+/*员工*/
+.icon-emp {
+	background: url('../images/icons/16/emp.gif') no-repeat center center;
+}
+
+.icon-emp32 {
+	background: url('../images/icons/32/user.png') no-repeat center center;
+}
+
+/*abc*/
+.icon-abc32 {
+	background: url('../images/icons/32/abc.png') no-repeat center center;
+}
+
+/*分类*/
+.icon-typemgr32 {
+	background: url('../images/icons/32/typemgr.png') no-repeat center
+		center;
+}
+
+/*属性*/
+.icon-prop32 {
+	background: url('../images/icons/32/prop.png') no-repeat center center;
+}
+
+/*字典*/
+.icon-dict32 {
+	background: url('../images/icons/32/dict.png') no-repeat center center;
+}
+
+/*流水*/
+.icon-serial32 {
+	background: url('../images/icons/32/serial.png') no-repeat center center
+		;
+}
+
+/*组织*/
+.icon-organization32 {
+	background: url('../images/icons/32/organization.png') no-repeat center
+		center;
+}
+
+/*地球*/
+.icon-earth32 {
+	background: url('../images/icons/32/earth.png') no-repeat center center;
+}
+
+/*分类标签*/
+.icon-marks32 {
+	background: url('../images/icons/32/marks.png') no-repeat center
+		center;
+}
+
+/*预置*/
+.icon-preset32 {
+	background: url('../images/icons/32/preset.png') no-repeat center center
+		;
+}
+
+/*综合管理*/
+.icon-multimgr32 {
+	background: url('../images/icons/32/multimgr.png') no-repeat center
+		center;
+}
+
+/*客户*/
+.icon-customer32 {
+	background: url('../images/icons/32/customer.png') no-repeat center
+		center;
+}
+
+/*供应链*/
+.icon-link32 {
+	background: url('../images/icons/32/link.png') no-repeat center center;
+}
+
+/*建筑*/
+.icon-build32 {
+	background: url('../images/icons/32/build.png') no-repeat center center;
+}
+
+/*薪资*/
+.icon-salary32 {
+	background: url('../images/icons/32/salary.png') no-repeat center center
+		;
+}
+
+/*奖励*/
+.icon-award32 {
+	background: url('../images/icons/32/award.png') no-repeat center center;
+}
+
+/*惩罚*/
+.icon-punish32 {
+	background: url('../images/icons/32/punish.png') no-repeat center center
+		;
+}
+
+/*报销*/
+.icon-reimburse32 {
+	background: url('../images/icons/32/reimburse.png') no-repeat center
+		center;
+}
+
+/*耗材*/
+.icon-supply32 {
+	background: url('../images/icons/32/supply.png') no-repeat center center
+		;
+}
+
+/*租赁*/
+.icon-lease32 {
+	background: url('../images/icons/32/lease.png') no-repeat center center;
+}
+
+/*维修*/
+.icon-repair32 {
+	background: url('../images/icons/32/repair.png') no-repeat center center
+		;
+}
+
+/*承建*/
+.icon-worker32 {
+	background: url('../images/icons/32/worker.png') no-repeat center center
+		;
+}
+
+/*销售*/
+.icon-shopcar32 {
+	background: url('../images/icons/32/shopcar.png') no-repeat center
+		center;
+}
+
+/*业绩*/
+.icon-sales32 {
+	background: url('../images/icons/32/sales.png') no-repeat center center;
+}
+
+/*人民币*/
+.icon-rmb32 {
+	background: url('../images/icons/32/rmb.png') no-repeat center center;
+}
+
+/*计算器*/
+.icon-calculator32 {
+	background: url('../images/icons/32/calculator.png') no-repeat center
+		center;
+}

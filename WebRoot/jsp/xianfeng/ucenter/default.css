@@ -1,0 +1,112 @@
+﻿body,html {
+	margin: 0;
+	padding: 0;
+}
+
+.header1 {
+	/*'Lucida Grande' , Verdana, Tahoma, Arial, sans-serif,HelveticaNeue-Light, 'Helvetica Neue Light' , 'Helvetica Neue' , Helvetica, Arial, sans-serif;*/
+	overflow: hidden;
+	height: 70px;
+	background-image: url('images/bg2.gif');
+	background-repeat: repeat-x;
+}
+
+.header2 {
+	height: 70px;
+	background-image: url('images/bg1.gif');
+	background-repeat: no-repeat;
+	background-position: top right;
+	/*background: #666;
+    direction: ltr;*/
+}
+
+.logo {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 20px;
+	font-size: 32px;
+	float: left;
+	color: #0e2d5f;
+}
+
+.contact {
+	text-align: right;
+	height: 65px;
+	padding: 10px;
+}
+
+.prompt {
+	color: #666;
+	margin: 0 10px;
+}
+
+.headerMenu ul {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	list-style: none;
+}
+
+.headerMenu a:link,.headerMenu a:visited {
+	text-decoration: none;
+}
+
+.headerMenu a:hover {
+	text-decoration: underline;
+}
+
+.headerMenu ul li {
+	margin: 0 10px;
+	float: right;
+	display: block;
+}
+
+.headerMenu ul li a:link,.headerMenu ul li a:visited {
+	color: #666;
+}
+
+.headerMenuDiv {
+	width: 1px;
+	height: 13px;
+	background: #999;
+}
+
+.footer {
+	height: 28px;
+	text-align: center;
+	font-size: 12px;
+	colo: #666;
+	padding-top: 6px;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-border-box: border-box;
+	background-image: url('images/bg3.png');
+	background-repeat: repeat-x;
+	background-position: 0 -182px;
+}
+
+/* 主页面-菜单栏、导航栏、内容栏的宽度和高度设置 */
+#divMenu {
+	width: 252px;
+}
+
+#divHeader {
+	height: 70px;
+	overflow: hidden;
+}
+
+#divFooter {
+	height: 28px;
+}
+
+#divTitleBar {
+	padding: 10px;
+}
+
+/* body的最小宽度和高度为 800*600 */
+#minWidth {
+	width: 800px;
+}
+
+#minHeight {
+	height: 600px;
+}

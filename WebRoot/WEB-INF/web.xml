@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+
+	<display-name>Xianfeng v1.0</display-name>
+
+	<welcome-file-list>
+		<welcome-file>jsp/xianfeng/ucenter/login.jsp</welcome-file>
+	</welcome-file-list>
+
+	<!-- Filter -->
+	<filter>
+		<filter-name>HttpEncodingFilter</filter-name>
+		<filter-class>
+			javax.xianfeng.web.filter.HttpEncodingFilter
+		</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>HttpEncodingFilter</filter-name>
+		<url-pattern>*</url-pattern>
+	</filter-mapping>
+
+	<filter>
+		<filter-name>HttpLocationFilter</filter-name>
+		<filter-class>
+			javax.xianfeng.web.filter.HttpLocationFilter
+		</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>HttpLocationFilter</filter-name>
+		<url-pattern>*.jsp</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>HttpLocationFilter</filter-name>
+		<url-pattern>*.action</url-pattern>
+	</filter-mapping>
+	
+	<filter>
+		<filter-name>HttpRegxFilter</filter-name>
+		<filter-class>
+			javax.xianfeng.web.filter.HttpRegxFilter
+		</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>HttpRegxFilter</filter-name>
+		<url-pattern>*.jsp</url-pattern>
+	</filter-mapping>
+	
+	<filter>
+		<filter-name>EasyUIFilter</filter-name>
+		<filter-class>
+			javax.xianfeng.easyui.filter.EasyUIFilter
+		</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>EasyUIFilter</filter-name>
+		<url-pattern>*</url-pattern>
+	</filter-mapping>
+	
+	<filter>
+		<filter-name>ApplicationFilter</filter-name>
+		<filter-class>javax.xianfeng.web.filter.ApplicationFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>ApplicationFilter</filter-name>
+		<url-pattern>*</url-pattern>
+	</filter-mapping>
+	
+	<filter>
+		<filter-name>AccessControlFilter</filter-name>
+		<filter-class>javax.xianfeng.system.security.SysAccessCtrlAsyncFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>AccessControlFilter</filter-name>
+		<url-pattern>*.jsp</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>AccessControlFilter</filter-name>
+		<url-pattern>*.action</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>AccessControlFilter</filter-name>
+		<url-pattern>*.rmi</url-pattern>
+	</filter-mapping>
+	
+	<!-- Spring -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>/WEB-INF/spring/spring*.xml</param-value>
+	</context-param>
+	
+	<filter>
+		<filter-name>openSessionInViewFilter</filter-name>
+		<filter-class>
+		org.springframework.orm.hibernate3.support.OpenSessionInViewFilter
+		</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>openSessionInViewFilter</filter-name>
+		<url-pattern>*.action</url-pattern>
+	</filter-mapping>
+	
+	<listener>
+		<listener-class>
+			org.springframework.web.context.ContextLoaderListener
+		</listener-class>
+	</listener>
+	
+	<!-- Refresh Introspector to prevent Memory leak -->
+	<listener>
+		<listener-class>
+			org.springframework.web.util.IntrospectorCleanupListener
+		</listener-class>
+	</listener>
+	
+	<!-- Struts-->
+	<filter>
+		<filter-name>struts2</filter-name>
+		<filter-class>
+			org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter
+		</filter-class>
+		<init-param>
+			<param-name>config</param-name>
+			<param-value>../struts/struts.xml</param-value>
+		</init-param>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>struts2</filter-name>
+		<url-pattern>*.action</url-pattern>
+	</filter-mapping>
+	
+	<filter-mapping>
+		<filter-name>struts2</filter-name>
+		<url-pattern>*.rmi</url-pattern>
+	</filter-mapping>
+	
+	<!-- Servlet -->
+	<servlet>
+		<servlet-name>HttpAjaxCommandServlet</servlet-name>
+		<servlet-class>
+			javax.xianfeng.web.servlet.HttpAjaxCommandServlet
+		</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>HttpAjaxCommandServlet</servlet-name>
+		<url-pattern>/servlet/command.exe</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>MetaDataAjaxServlet</servlet-name>
+		<servlet-class>javax.xianfeng.web.servlet.MetaDataAjaxServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>MetaDataAjaxServlet</servlet-name>
+		<url-pattern>/servlet/metadata.exe</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>HttpReloadClassServlet</servlet-name>
+		<servlet-class>javax.xianfeng.web.servlet.HttpReloadClassServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>HttpReloadClassServlet</servlet-name>
+		<url-pattern>/servlet/reloadc.exe</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>VerifyCodeServlet</servlet-name>
+		<servlet-class>javax.xianfeng.web.servlet.VerifyCodeServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>VerifyCodeServlet</servlet-name>
+		<url-pattern>/servlet/verifycode.exe</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>demo.DemoEntity1Servlet</servlet-name>
+		<servlet-class>javax.xianfeng.framework.servlet.SpringDelegatingServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>demo.DemoEntity1Servlet</servlet-name>
+		<url-pattern>/servlet/demo/DemoEntityServlet</url-pattern>
+	</servlet-mapping>
+	
+	<!-- Session (minute) -->
+	<session-config>
+		<session-timeout>30</session-timeout>
+	</session-config>
+
+	<!-- Error Page -->
+	<error-page>
+		<error-code>403</error-code>
+		<location>/jsp/xianfeng/error/403.jsp</location>
+	</error-page>
+
+	<error-page>
+		<error-code>404</error-code>
+		<location>/jsp/xianfeng/error/404.jsp</location>
+	</error-page>
+
+	<error-page>
+		<error-code>500</error-code>
+		<location>/jsp/xianfeng/error/500.jsp</location>
+	</error-page>
+
+	<jsp-config>
+		<taglib>
+			<taglib-uri>http://javax.xianfeng.mhtml</taglib-uri>
+			<taglib-location>/WEB-INF/tld/mhtml-html.tld</taglib-location>
+		</taglib>
+		<taglib>
+			<taglib-uri>http://javax.xianfeng.mhtml/demo</taglib-uri>
+			<taglib-location>/WEB-INF/tld/mhtml-demo.tld</taglib-location>
+		</taglib>
+		<taglib>
+			<taglib-uri>http://javax.xianfeng.mhtml/base</taglib-uri>
+			<taglib-location>/WEB-INF/tld/mhtml-base.tld</taglib-location>
+		</taglib>
+		<taglib>
+			<taglib-uri>http://javax.xianfeng.mhtml/model</taglib-uri>
+			<taglib-location>/WEB-INF/tld/mhtml-model.tld</taglib-location>
+		</taglib>
+	</jsp-config>
+	
+</web-app>

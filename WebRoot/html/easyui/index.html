@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>主页</title>
+    <script type="text/javascript" src="../../plugin/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="../../plugin/easyui/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="../../plugin/easyui/locale/easyui-lang-zh_CN.js"></script>
+    <script type="text/javascript" src="index.js"></script>
+    
+    <link type="text/css" rel="stylesheet" href="../../plugin/easyui//themes/default/easyui.css"/>
+    <link type="text/css" rel="stylesheet" href="../../skins/css/icon.css"/>
+    <link type="text/css" rel="stylesheet" href="index.css"/>
+</head>
+<body class="easyui-layout">
+    <div id="divHeader" data-options="region:'north',border:false,href:'header.html'"></div>
+    <div id="divMenu" data-options="region:'west',split:true,collapsed:false,title:'',href:'menu.html'"></div>
+    <div id="divContent" data-options="region:'center',title:false">
+        <div id="tabs" class="easyui-tabs" data-options="fit:true,border:false">
+            <div id="divHomePage" title="首页" data-options="href:'welcome.html'"></div>
+        </div>
+        <div id="tabMenu" class="easyui-menu" style="width:120px;">
+        	<div id="tabMenu-close" data-options="iconCls:'icon-close'">关闭</div>
+        	<div id="tabMenu-closeOther" data-options="iconCls:'icon-close'">关闭其它</div>
+        	<div id="tabMenu-closeAll" data-options="iconCls:'icon-close'">关闭全部</div>
+        	<div class="menu-sep"></div>
+        	<div id="tabMenu-refresh" data-options="iconCls:'icon-refresh'">刷新</div>
+        </div>
+    </div>
+    <div id="divFooter" data-options="region:'south',border:false,href:'footer.html'"></div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script type="text/javascript" src="../../plugin/echarts/echarts-all.js"></script>
+</head>
+<body>
+<div id="main" style="height: 400px;"></div>
+<script type="text/javascript">
+var myChart = echarts.init(document.getElementById('main'));
+var option = {
+    tooltip : {
+        formatter: "{a} <br/>{b} : {c}%"
+    },
+    toolbox: {
+        show : true,
+        feature : {
+            mark : {show: true},
+            restore : {show: true},
+            saveAsImage : {show: true}
+        }
+    },
+    series : [
+        {
+            name:'内存指标',
+            type:'gauge',
+            detail : {formatter:'{value}%'},
+            data:[{value: 30, name: '内存占用率'}]
+        }
+    ]
+};
+
+myChart.setOption(option);
+</script>
+</body>
+
+</html>

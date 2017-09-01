@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	
+	<!-- 属性管理 -->
+	<package name="platform.Property" namespace="/action/platform/property" extends="struts-default">
+		<action name="doList" class="javax.xianfeng.platform.base.action.PropertyAction" method="doList"/>
+		<action name="doSave" class="javax.xianfeng.platform.base.action.PropertyAction" method="doSave"/>
+	</package>
+		
+	<!-- 字典管理 -->
+	<package name="platform.Dict" namespace="/action/platform/dict" extends="struts-default">
+		<action name="doList" class="javax.xianfeng.platform.base.action.DictAction" method="doList"/>
+		<action name="doSave" class="javax.xianfeng.platform.base.action.DictAction" method="doSave"/>
+	</package>
+	
+	<package name="platform.DictItem" namespace="/action/platform/dictItem" extends="struts-default">
+		<action name="doList" class="javax.xianfeng.platform.base.action.DictItemAction" method="doList"/>
+		<action name="doSave" class="javax.xianfeng.platform.base.action.DictItemAction" method="doSave"/>
+	</package>
+	
+	<!-- 流水号管理 -->
+	<package name="platform.SerialNo" namespace="/action/platform/serialNo" extends="struts-default">
+		<action name="doList" class="javax.xianfeng.platform.base.action.SerialNoAction" method="doList"/>
+		<action name="doSave" class="javax.xianfeng.platform.base.action.SerialNoAction" method="doSave"/>
+	</package>
+	
+	<!-- 通讯录管理 -->
+	<package name="platform.LinkRec" namespace="/action/platform/linkRec" extends="struts-default">
+		<action name="doList" class="javax.xianfeng.platform.base.action.LinkRecAction" method="doList"/>
+		<action name="doEdit" class="javax.xianfeng.platform.base.action.LinkRecAction" method="doEdit"/>
+		<action name="doDrop" class="javax.xianfeng.platform.base.action.LinkRecAction" method="doDrop"/>
+		<action name="doSave" class="javax.xianfeng.platform.base.action.LinkRecAction" method="doSave"/>
+		<action name="doExcel" class="javax.xianfeng.platform.base.action.LinkRecAction" method="doExcel">
+			<result name="success" type="stream"> 
+	            <param name="contentType">application/vnd.ms-excel;charset=UTF-8</param>
+	            <param name="contentDisposition">attachment;filename="${fileName}"</param>
+	            <param name="bufferSize">1024</param> 
+	            <param name="inputName">excelStream</param> 
+			</result> 
+		</action>
+	</package>
+	
+	<!-- 组织机构管理 -->
+	<package name="platform.OrganType" namespace="/action/platform/organType" extends="struts-default">
+		<action name="doList" class="javax.xianfeng.platform.organ.action.OrganTypeAction" method="doList"/>
+		<action name="doSave" class="javax.xianfeng.platform.organ.action.OrganTypeAction" method="doSave"/>
+	</package>
+	
+	<package name="platform.OrganRule" namespace="/action/platform/organRule" extends="struts-default">
+		<action name="doList" class="javax.xianfeng.platform.organ.action.OrganRuleAction" method="doList"/>
+		<action name="doSave" class="javax.xianfeng.platform.organ.action.OrganRuleAction" method="doSave"/>
+	</package>
+	
+	<package name="platform.Organ" namespace="/action/platform/organ" extends="struts-default">
+		<action name="doList" class="javax.xianfeng.platform.organ.action.OrganAction" method="doList"/>
+		<action name="doEdit" class="javax.xianfeng.platform.organ.action.OrganAction" method="doEdit"/>
+		<action name="doSave" class="javax.xianfeng.platform.organ.action.OrganAction" method="doSave"/>
+		<action name="doDrop" class="javax.xianfeng.platform.organ.action.OrganAction" method="doDrop"/>
+	</package>
+	
+	<!-- 行政区划管理 -->
+	<package name="platform.CantType" namespace="/action/platform/cantType" extends="struts-default">
+		<action name="doList" class="javax.xianfeng.platform.base.action.CantTypeAction" method="doList"/>
+		<action name="doSave" class="javax.xianfeng.platform.base.action.CantTypeAction" method="doSave"/>
+	</package>
+	
+	<package name="platform.Cant" namespace="/action/platform/cant" extends="struts-default">
+		<action name="doList" class="javax.xianfeng.platform.base.action.CantAction" method="doList"/>
+		<action name="doSave" class="javax.xianfeng.platform.base.action.CantAction" method="doSave"/>
+	</package>
+	
+</struts>

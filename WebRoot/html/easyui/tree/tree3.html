@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" type="text/css" href="../../../plugin/easyui/themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../../../skins/css/icon.css">
+	<script type="text/javascript" src="../../../plugin/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="../../../plugin/easyui/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="../../../plugin/easyui/locale/easyui-lang-zh_CN.js"></script>
+</head>
+<body class="easyui-layout" style="margin: 4px">
+<div id="treeDiv1" class="easyui-panel" title="维护数据" data-options="region:'west', split:true, collapsed:false" style="width:250px">
+	<ul id="tree1"></ul>
+</div>
+<div id="treeDiv2" class="easyui-panel" title="预置数据" data-options="region:'center', split:true, collapsed:false" style="width:250px">
+	<ul id="tree2"></ul>
+</div>
+<div id="treeDiv3" class="easyui-panel" title=" " data-options="region:'south', split:true, collapsed:false" style="height:150px; padding: 20px;">
+	拖放结果：<label id="msg"></label>
+	<br/><br/>
+	附加说明：<label id="desc" style="color:#f00;"></label>
+</div>
+</div>
+</body>
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#tree1").tree({
+		data: [{
+			"id": "root", 
+			"text": "根节点", 
+			"children": [{
+				"id": "101",
+				"text": "101",
+				"state": "open",
+				"children": [{
+					"id": "10101",
+					"text": "10101"
+				}, {
+					"id": "10102",
+					"text": "10102"
+				}, {
+					"id": "10103",
+					"text": "10103"
+				}]
+			}, {
+				"id": "102",
+				"text": "102",
+				"state": "open",
+				"children": [{
+					"id": "10201",
+					"text": "10201"
+				}, {
+					"id": "10202",
+					"text": "10202"
+				}, {
+					"id": "10203",
+					"text": "10203"
+				}]
+			}, {
+				"id": "103",
+				"text": "103"
+			}]
+		}],
+		dnd: true,
+		onStopDrag: function (node) {
+		
+		},
+		onDrop: function (target, source, point) {
+			var targetNode = $(this).tree("getNode", target);
+			$("#msg").text(source.text + " → " + targetNode.text + " → " + point);
+			if ("append" == point) {
+				//source变成target的子节点
+				$("#desc").text(source.text + " 变成 " + targetNode.text + " 的子节点");
+			} else if ("top" == point) {
+				//source变成target的上方兄弟节点
+				$("#desc").text(source.text + " 变成 " + targetNode.text + " 的上方兄弟节点");
+			} else if ("bottom" == point) {
+				//source变成target的下方兄弟节点
+				$("#desc").text(source.text + " 变成 " + targetNode.text + " 的下方兄弟节点");
+			} else {
+				//未知的point类型
+				$("#desc").text("未知的point类型" + point);
+			}
+			// 保存数据
+			return true;
+		}
+	});
+	$("#tree2").tree({
+		data: [{
+			"id": "root", 
+			"text": "根节点", 
+			"children": [{
+				"id": "201",
+				"text": "201",
+				"state": "open",
+				"children": [{
+					"id": "20101",
+					"text": "20101"
+				}, {
+					"id": "20102",
+					"text": "20102"
+				}, {
+					"id": "20103",
+					"text": "20103"
+				}]
+			}, {
+				"id": "202",
+				"text": "202",
+				"state": "open",
+				"children": [{
+					"id": "20201",
+					"text": "20201"
+				}, {
+					"id": "20202",
+					"text": "20202"
+				}, {
+					"id": "20203",
+					"text": "20203"
+				}]
+			}, {
+				"id": "203",
+				"text": "203"
+			}]
+		}],
+		dnd: true,
+		onStartDrag: function (node) {
+			//alert(node.text);
+			return true;
+		},
+		onDragOver: function (node) {
+			return false;
+		},
+		onDragEnter: function (node) {
+			return false;
+		},
+		onDragLeave: function (node) {
+			return false;
+		}
+	});
+});
+</script>
+</html>

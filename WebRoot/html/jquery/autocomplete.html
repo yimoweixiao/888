@@ -1,0 +1,40 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>demo.html</title>
+
+<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+<meta http-equiv="description" content="this is my page">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="../../plugin/jquery/jqueryui/jquery-ui.min.css"/>
+<script type="text/javascript" src="../../plugin/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../plugin/jquery/jqueryui/jquery-ui.min.js"></script>
+</head>
+<body>
+<br/>
+<table border="1">
+<tr>
+	<td>输入提示框：</td>
+	<td>
+		<input type="text" id="autocomplete" style="width:150px;background-color:#fff;"/>
+	</td>
+</tr>
+<tr>
+	<td>输入提示框：</td>
+	<td>
+		<input type="text" id="name1" style="width:150px;background-color:#fff;"/>
+	</td>
+</tr>
+</table>
+<script type="text/javascript">
+var list = [ 
+	'Java', 'JavaScript', 'JScript', 'jQuery', 'J#', 'JSON',
+	'PostgreSQL', 'PHP', 'Python', 'Perl', 
+	'你好', '你好吗', '中文', '中华人民共和国', '我是中国人，我爱我的祖国中华人民共和国'
+];
+$( "#autocomplete" ).autocomplete({
+  source: list
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title></title>
+</head>
+<body>
+    <div id="menuAccrodion" class="easyui-accordion" data-options="fit:true, border:false">
+        <div id="div16" title="典型功能" style="padding:0;">
+            <ul class="easyui-tree" data-options="onClick: function(node){addNewTab(node.text,node.id)}">
+                <li>
+                    <span>表单功能</span>
+                    <ul>
+                        <li id='form/form1.html'><span>普通表单</span></li>
+                        <li id='form/form2.html'><span>顶部按钮栏</span></li>
+                        <li id='form/form3.html'><span>底部按钮栏</span></li>
+                    </ul>
+                </li>
+                <li>
+                    <span>表格功能</span>
+                    <ul>
+                        <li id='grid/grid1.html'><span>查询表格</span></li>
+                        <li id='grid/grid2.html'><span>编辑表格</span></li>
+                        <li id='grid/grid3.html'><span>表格滚动条</span></li>
+                    </ul>
+                </li>
+                <li>
+                    <span>树功能</span>
+                    <ul>
+                        <li id='tree/tree1.html'><span>树形维护功能</span></li>
+                        <li id='tree/tree2.html'><span>树右键菜单</span></li>
+                        <li id='tree/tree3.html'><span>树节点拖放</span></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div id="div60" title="常用功能" style="padding:0;">
+            <ul class="easyui-tree" data-options="onClick: function(node){addNewTab(node.text,node.id)}">
+               <li>
+                    <span>数据校验</span>
+                    <ul>
+                        <li id='form/form4.html'><span>表单校验</span></li>
+                        <li id='form/form5.html'><span>Ajax表单校验</span></li>
+                        <li id='grid/grid4.html'><span>表格校验</span></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

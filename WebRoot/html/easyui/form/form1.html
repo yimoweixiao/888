@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>普通表单</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" type="text/css" href="../../../plugin/easyui/themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../../../skins/css/icon.css">
+	<script type="text/javascript" src="../../../plugin/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="../../../plugin/easyui/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="../../../plugin/easyui/locale/easyui-lang-zh_CN.js"></script>
+</head>
+<body>
+<div class="easyui-panel" title="基本信息">
+    <form id="form1" method="post">
+    	<table width="560" border="0" cellpadding="4">
+    		<tr>
+    			<td align="right">单行文本框：</td>
+    			<td>
+    				<input type="text" name="f1" class="easyui-textbox" data-options="prompt:'请输入...'"/>
+    			</td>
+    		</tr>
+    		<tr>
+    			<td align="right">单选框：</td>
+    			<td>
+    				<input type="radio" name="f2" value="1"/>选项
+    				<input type="radio" name="f2" value="2"/>选项
+    			</td>
+    		</tr>
+    		<tr>
+    			<td align="right">复选框：</td>
+    			<td>
+    				<input type="checkbox" name="f3" value="1"/>选项
+    				<input type="checkbox" name="f3" value="2"/>选项
+    				<input type="checkbox" name="f3" value="3"/>选项
+    			</td>
+    		</tr>
+    		<tr>
+    			<td align="right">下拉框：</td>
+    			<td>
+    				<select class="easyui-combobox" name="f4" style="width:153px;">
+    					<option value="Java">Java</option>
+    					<option value="C#">C#</option>
+    					<option value="PHP">PHP</option>
+    				</select>
+    			</td>
+    		</tr>
+    		<tr>
+    			<td align="right">多行文本框：</td>
+    			<td>
+    				<textarea name="f5" cols="36" rows="4"></textarea>
+    			</td>
+    		</tr>
+    		<tr>
+    			<td align="right">数字域：</td>
+    			<td>
+    				<input type="text" name="f6" class="easyui-numberspinner"/>
+    			</td>
+    		</tr>
+    		<tr>
+    			<td align="right">日期域：</td>
+    			<td>
+    				<input type="text" name="f7" class="easyui-datebox"/>
+    			</td>
+    		</tr>
+    		<tr>
+    			<td colspan="2" align="center">
+    				<a href="javascript:void(0)" class="easyui-linkbutton" onclick="submitEvt()" style="width:60px;">提交</a>
+    				&nbsp;&nbsp;&nbsp;&nbsp;
+    				<a href="javascript:void(0)" class="easyui-linkbutton" onclick="returnEvt()" style="width:60px;">取消</a>
+    			</td>
+    		</tr>
+    	</table>
+    </form>
+</div>
+</body>
+<script type="text/javascript">
+function submitEvt() {
+	$('#form1').form('submit');
+}
+
+function returnEvt() {
+	$('#form1').form('clear');
+}
+</script>
+</html>

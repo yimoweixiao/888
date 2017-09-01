@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>主页</title>
+    <script type="text/javascript" src="../../plugin/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="../../plugin/easyui/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="../../plugin/easyui/locale/easyui-lang-zh_CN.js"></script>
+    
+    <link rel="stylesheet" href="../../plugin/easyui//themes/default/easyui.css"/>
+    <link rel="stylesheet" href="../../skins/css/icon.css"/>
+    <link rel="stylesheet" href="index.css"/>
+</head>
+<body class="easyui-layout">
+    <div id="divHeader" data-options="region:'north',border:false,href:'login-header.html'"></div>
+    <div id="divContent" data-options="region:'center',border:false" style="">
+    	<br/><br/><br/><br/>
+    	<table width="100%" border="0">
+    		<tr>
+    			<td width="20%">&nbsp;</td>
+    			<td width="60%" align="center">
+    				 <div id="loginDiv" title="用户登录" class="easyui-panel" data-options="border:true" style="width:450px;height:300px;">
+			        	<form id="form1" action="index.html" method="post">
+				           <table width="420" cellpadding="6" style="margin-top:40px;">
+				           		<tr>
+				           			<td width="150" align="right">用户名：</td>
+				           			<td>
+				           				<input type="text"/>
+				           			</td>
+				           		</tr>
+				           		<tr>
+				           			<td align="right">密码：</td>
+				           			<td>
+				           				<input type="password"/>
+				           			</td>
+				           		</tr>
+				           		<tr>
+				           			<td align="right">验证码：</td>
+				           			<td>
+				           				<input type="text"/>
+				           			</td>
+				           		</tr>
+				           		<tr>
+				           			<td colspan="2" align="center">
+				           				&nbsp;&nbsp;
+				    					<a href="#">忘记密码？</a>
+				    					&nbsp;&nbsp;
+				           				<a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-select'" onclick="submitEvt();return false;" style="width:60px;">登录</a>
+				    					&nbsp;&nbsp;
+				    					<a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-user'" onclick="registEvt();return false;" style="width:60px;">注册</a>
+				           			</td>
+				           		</tr>
+				           </table>
+			           </form>
+			        </div>
+    			</td>
+    			<td width="20%">&nbsp;</td>
+    		</tr>
+    	</table>
+    </div>
+    <div id="divFooter" data-options="region:'south',border:false,href:'footer.html'"></div>
+</body>
+<script type="text/javascript">
+function submitEvt() {
+	//$('#form1').form('submit');
+	location.href = "index.html";
+}
+
+function registEvt() {
+	location.href = "regist.html";
+}
+</script>
+</html>

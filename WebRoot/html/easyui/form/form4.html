@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>表单校验</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" type="text/css" href="../../../plugin/easyui/themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../../../plugin/easyui/themes/easyui-ext.css">
+	<link rel="stylesheet" type="text/css" href="../../../skins/css/icon.css">
+	<script type="text/javascript" src="../../../plugin/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="../../../plugin/jquery/validation/jquery.validate.min.js"></script>
+	<script type="text/javascript" src="../../../plugin/jquery/validation/messages_zh.min.js"></script>
+	<script type="text/javascript" src="../../../plugin/easyui/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="../../../plugin/easyui/locale/easyui-lang-zh_CN.js"></script>
+</head>
+<body>
+<div class="easyui-panel" title="" data-options="footer:'#footer', border:false" fit="true">
+    <form id="form1" action="demo.action" method="post">
+    	<table width="560" border="0" cellpadding="4">
+    		<tr>
+    			<td align="right">单行文本框：</td>
+    			<td>
+    				<input type="text" name="f1" class="easyui-textbox" data-options="prompt:'请输入...'" required="true"/>
+    			</td>
+    		</tr>
+    		<tr>
+    			<td align="right">单选框：</td>
+    			<td>
+    				<input type="radio" id="f21" name="f2" required="true" value="1"/>选项
+    				<input type="radio" id="f22" name="f2" value="2"/>选项
+    				<label for="f2" class="error">请选择</label>
+    			</td>
+    		</tr>
+    		<tr>
+    			<td align="right">复选框：</td>
+    			<td>
+    				<input type="checkbox" id="f31" name="f3" required="true" value="1"/>选项
+    				<input type="checkbox" id="f32" name="f3" value="2"/>选项
+    				<input type="checkbox" id="f33" name="f3" value="3"/>选项
+    				<label for="f3" class="error">请选择</label>
+    			</td>
+    		</tr>
+    		<tr>
+    			<td align="right">下拉框：</td>
+    			<td>
+    				<select class="easyui-combobox" name="f4" required="true" style="width:153px;">
+    					<option></option>
+    					<option value="Java">Java</option>
+    					<option value="C#">C#</option>
+    					<option value="PHP">PHP</option>
+    				</select>
+    			</td>
+    		</tr>
+    		<tr>
+    			<td align="right">多行文本框：</td>
+    			<td>
+    				<textarea name="f5" class="easyui-validatebox" cols="36" rows="4" data-options="required:true"></textarea>
+    			</td>
+    		</tr>
+    		<tr>
+    			<td align="right">数字域：</td>
+    			<td>
+    				<input type="text" name="f6" class="easyui-numberspinner" required="true"/>
+    			</td>
+    		</tr>
+    		<tr>
+    			<td align="right">日期域：</td>
+    			<td>
+    				<input type="text" name="f7" class="easyui-datebox" required="true"/>
+    			</td>
+    		</tr>
+    	</table>
+    	<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+    </form>
+</div>
+<div id="footer" class="footbar">
+	<a href="javascript:void(0)" class="easyui-linkbutton" onclick="submitEvt()" style="width:60px;">提交</a>
+	&nbsp;&nbsp;&nbsp;&nbsp;
+	<a href="javascript:void(0)" class="easyui-linkbutton" onclick="returnEvt()" style="width:60px;">取消</a>
+</div>
+</body>
+<script type="text/javascript">
+
+$(document).ready(function() {
+	$("#form1").validate();
+});
+
+function submitEvt() {
+	$("#form1").submit();
+	/*$("#form1").form('submit', {
+		onSubmit: function() {
+			return $("#form1").validate();
+		}	
+	});*/
+}
+
+function returnEvt() {
+	$('#form1').form('clear');
+}
+</script>
+</html>

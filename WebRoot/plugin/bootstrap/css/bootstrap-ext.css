@@ -1,0 +1,73 @@
+/***********扩展样式***********/
+.table>thead>tr>th {
+	background-color: #E3EEFB;
+	border-bottom: 1px solid #ddd;
+	text-align: center;
+}
+
+.table>tbody>tr>td {
+	vertical-align: middle;
+}
+
+.pagination {
+	margin-top: 0px;
+}
+
+.pagination>li>a,.pagination>li>span {
+	margin-left: 4px;
+}
+
+/*datatables*/
+.dataTables_length>label {
+	font-weight: normal;
+}
+
+.dataTables_filter>label {
+	font-weight: normal;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+	padding: 0px 0px;
+}
+
+.dataTables_scrollHeadInner{
+	background-color: #E3EEFB;
+}
+
+.dataTables_wrapper.no-footer .dataTables_scrollBody {
+  border-bottom: 1px solid #ddd;
+}
+
+/***********自定义样式***********/
+.toolbar-btn {
+	padding-top: 8px;
+	padding-bottom: 8px;
+}
+
+.toolbar-tip {
+	padding-right: 2px;
+	padding-top: 8px;
+	padding-bottom: 8px;
+}
+
+/*查询表格*/
+.form-table {
+	border: #ddd solid 1px;
+	border-collapse: collapse;
+}
+
+.form-table>tbody>tr>td {
+	padding: 4px;
+	border: #ddd solid 1px;
+	vertical-align: middle;
+}
+
+.form-label {
+	background-color: #F2F6F9;
+	text-align: right;
+	font-weight: bold;
+}
+
+.form-btn {
+	text-align: center;
+}

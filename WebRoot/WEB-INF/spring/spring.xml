@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans    
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd    
+    http://www.springframework.org/schema/context    
+    http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+    
+    <context:annotation-config/>
+
+	<!-- datasource.properties -->
+	<bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+    	<property name="location">
+    		<value>classpath:datasource.properties</value>
+ 		</property>
+	</bean>
+	
+	<!-- DataSource -->
+	<bean id="DataSourceSYS" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+		<property name="jdbcUrl" value="${dataSource.url}"/>
+		<property name="user" value="${dataSource.user}"/>
+		<property name="password" value="${dataSource.password}"/>
+		<property name="driverClass" value="${dataSource.driver}"/>
+	</bean>
+	
+	<bean id="DataSourceCMS" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+		<property name="jdbcUrl" value="${dataSource1.url}"/>
+		<property name="user" value="${dataSource1.user}"/>
+		<property name="password" value="${dataSource1.password}"/>
+		<property name="driverClass" value="${dataSource1.driver}"/>
+	</bean>
+	
+	<bean id="dataSource" class="javax.xianfeng.spring.DynamicDataSource"> 
+		<property name="targetDataSources"> 
+			<map key-type="java.lang.String"> 
+				<entry key="DataSourceSYS" value-ref="DataSourceSYS"/>
+				<entry key="DataSourceCMS" value-ref="DataSourceCMS"/>  
+			</map>
+		</property>
+		<property name="defaultTargetDataSource" ref="DataSourceSYS"/> 
+	</bean> 
+	
+	<!-- sessionFactory
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="configLocation">   
+            <value>classpath:hibernate.cfg.xml</value>   
+        </property>
+	</bean>
+	-->
+	
+	<bean id="sessionFactoryLocal" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="mappingLocations">
+			<list>
+				<value>classpath:/javax/xianfeng/*/hbm/*.hbm.xml</value>
+			</list>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLInnoDBDialect</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.format_sql">true</prop>
+				<prop key="hibernate.hbm2ddl.auto">none</prop>
+			</props>
+		</property>
+	</bean> 
+	
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="packagesToScan">
+			<list>
+	            <value>javax.xianfeng.*.*.entity</value>
+	            <value>com.xianfeng.*.*.entity</value>
+	        </list>
+	    </property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLInnoDBDialect</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.format_sql">true</prop>
+				<prop key="hibernate.hbm2ddl.auto">none</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<!-- Transaction -->
+	<bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	
+	<!-- 
+	<tx:advice id="txAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+		    <tx:method name="save*" propagation="REQUIRED"/>
+		    <tx:method name="update*" propagation="REQUIRED"/>
+		    <tx:method name="delete*" propagation="REQUIRED"/>
+		    <tx:method name="add*" propagation="REQUIRED"/>
+		    <tx:method name="del*" propagation="REQUIRED"/>
+		    <tx:method name="*" read-only="true"/>
+		</tx:attributes>
+    </tx:advice>
+	-->
+	 
+	<!-- HibernateTemplate
+	<bean id="hibernateTemplate" class="org.springframework.orm.hibernate3.HibernateTemplate">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	-->
+	
+	<!-- Import 
+	<import resource="spring-demo.xml"/>
+	-->
+</beans>

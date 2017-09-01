@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+
+	<package name="demo1" namespace="/struts/demo" extends="struts-default">
+		<action name="demo11" class="javax.xianfeng.demo.action.DemoAction1">
+			<result name="success">success.jsp</result>
+			<result name="failed">failed.jsp</result>
+		</action>
+		
+		<action name="demo12" class="javax.xianfeng.demo.action.DemoAction2">
+			<result name="success">success.jsp</result>
+			<result name="failed">failed.jsp</result>
+		</action>
+		
+		<action name="demo13" class="javax.xianfeng.demo.action.DemoAction3">
+			<result name="success">success.jsp</result>
+			<result name="failed">failed.jsp</result>
+		</action>
+	</package>
+	
+	<package name="demo2" namespace="/struts/demo" extends="json-default">
+		<action name="demo21" class="javax.xianfeng.demo.action.DemoJsonAction1" method="demo">
+			<result type="json"/>
+		</action>
+		
+		<action name="demo22" class="javax.xianfeng.demo.action.DemoJsonAction2">
+			<result type="json"/>
+		</action>
+	</package>
+
+</struts>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" type="text/css" href="../../../plugin/easyui/themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../../../skins/css/icon.css">
+	<script type="text/javascript" src="../../../plugin/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="../../../plugin/easyui/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="../../../plugin/easyui/locale/easyui-lang-zh_CN.js"></script>
+	<style type="text/css">
+		.datagrid-header-row .datagrid-cell{text-align:center;}
+	</style>
+</head>
+<body>
+<table id="grid1" class="easyui-datagrid" fit="true" data-options="onClickRow:onClickRow, rownumbers:true, border:false, singleSelect:true, agination:true, toolbar:toolbar">
+	<thead>
+		<tr>
+			<th field="ck" checkbox="true"></th>
+			<th field="code" editor="{type:'validatebox',options:{required:true}}" style="width:15%">编号</th>
+			<th field="name" editor="{type:'validatebox',options:{required:true}}" style="width:25%">名称</th>
+			<th field="type" editor="{type:'combobox',options:{required:true,data:[{text:'A',value:'A'},{text:'B',value:'B'}]}}" style="width:15%">类型</th>
+			<th field="note" editor="{type:'validatebox',options:{required:true}}" style="width:40%">说明</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td></td>
+			<td>N201500001</td>
+			<td>名称1</td>
+			<td>S</td>
+			<td>附加说明……</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>N201500002</td>
+			<td>名称2</td>
+			<td>A</td>
+			<td>附加说明</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>N201500003</td>
+			<td>名称3</td>
+			<td>B</td>
+			<td>附加说明</td>
+		</tr>
+	</tbody>
+</table>
+</body>
+<script type="text/javascript">
+var editIndex = undefined;
+
+var toolbar = [{
+	text: "新增",
+	iconCls: "icon-add",
+	handler: function() {
+		if (endEditing()){
+			$('#grid1').datagrid('appendRow',{type:'B'});
+			editIndex = $('#grid1').datagrid('getRows').length-1;
+			$('#grid1').datagrid('selectRow', editIndex).datagrid('beginEdit', editIndex);
+		}
+	}
+}, {
+	text: "删除",
+	iconCls: "icon-delete",
+	handler: function() {
+		alert("delete");
+	}
+}, {
+	text: "保存",
+	iconCls: "icon-saveall",
+	handler: function() {
+		alert("saveall");
+	}
+}];
+
+function onClickRow(index){
+	if (editIndex != index){
+		if (endEditing()){
+			$('#grid1').datagrid('selectRow', index).datagrid('beginEdit', index);
+			editIndex = index;
+		} else {
+			$('#grid1').datagrid('selectRow', editIndex);
+		}
+	}
+}
+function endEditing(){
+	if (editIndex == undefined){return true}
+	if ($('#grid1').datagrid('validateRow', editIndex)){
+		$('#grid1').datagrid('endEdit', editIndex);
+		editIndex = undefined;
+		return true;
+	} else {
+		return false;
+	}
+}
+</script>
+</html>

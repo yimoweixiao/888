@@ -1,0 +1,48 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- http://www.tuicool.com/articles/z2AVve -->
+<html>
+<head>
+<title>demo.html</title>
+<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+<meta http-equiv="description" content="this is my page">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="../../plugin/artdialog/artDialog.source.js?skin=blue"></script>
+<script type="text/javascript" src="../../plugin/artdialog/plugins/iframeTools.js"></script>
+<script type="text/javascript" src="../../plugin/jquery/jquery.js"></script>
+<script type="text/javascript">
+function clickEvt () {
+	var myDialog = art.dialog.open(
+		"http://localhost:9080/xianfeng/html/artdialog/model_dialog.html" , {
+		title: "弹出窗口",
+		width: 780,
+		height: 420,
+		lock: true,
+		button: [{
+			name: "确定",
+			callback: function (){
+				var win = this.iframe.contentWindow;
+				var result = win.getConfirm();
+				alert(result[0].id);
+				this.close();
+			}
+		}, {
+			name: "清空",
+			callback: function (){
+				this.close();
+			}
+		}, {
+			name: "关闭",
+			callback: function (){
+				this.close();
+			}
+		}]
+	});
+}
+</script>
+</head>
+
+<body>
+	Hello World<br>
+	<input type="button" onclick="clickEvt()" value="点我"/>
+</body>
+</html>
